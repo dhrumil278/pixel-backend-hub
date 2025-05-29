@@ -150,11 +150,13 @@
   .tech-badge {
     background: var(--accent);
     color: var(--accent-foreground);
+    border: 1px solid var(--accent);
   }
 
   .dark .tech-badge {
     background: var(--primary);
     color: var(--primary-foreground);
+    border: 1px solid var(--primary);
   }
 }
 

@@ -64,7 +64,7 @@ const ProjectsSection = () => {
                   {project.stack.map((tech) => (
                     <span 
                       key={tech}
-                      className="tech-badge px-3 py-1 text-xs rounded-full font-mono font-medium shadow-sm border border-current/20"
+                      className="tech-badge px-3 py-1 text-xs rounded-full font-mono font-medium shadow-sm"
                     >
                       {tech}
                     </span>

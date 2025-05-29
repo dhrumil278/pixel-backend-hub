@@ -37,9 +37,9 @@ const Preloader = () => {
             } else {
               setIsCompleted(true);
             }
-          }, stepIndex === loadingSteps.length - 1 ? 800 : 400);
+          }, stepIndex === loadingSteps.length - 1 ? 600 : 200);
         }
-      }, 40);
+      }, 20); // Faster typing speed - changed from 40ms to 20ms
     };
 
     typeText(loadingSteps[currentStep], currentStep);
@@ -82,7 +82,7 @@ const Preloader = () => {
           </div>
           <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
             <div 
-              className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-500 relative"
+              className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-300 relative"
               style={{ width: `${progress}%` }}
             >
               <div className="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
