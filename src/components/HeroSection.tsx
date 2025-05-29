@@ -53,7 +53,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 scroll-reveal">
           <Button 
             size="lg" 
-            className="magnetic-hover bg-primary hover:bg-primary/90 text-white px-8 py-3"
+            className="magnetic-hover bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 border-2 border-primary shadow-lg"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Projects
@@ -61,7 +61,7 @@ const HeroSection = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="magnetic-hover border-primary text-primary hover:bg-primary hover:text-white px-8 py-3"
+            className="magnetic-hover border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 bg-background/80 backdrop-blur-sm shadow-lg"
           >
             Download Resume
           </Button>

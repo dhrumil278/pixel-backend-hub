@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, Mail } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 const ProjectsSection = () => {
   const projects = [
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="glass group hover:glow transition-all duration-300 overflow-hidden scroll-reveal"
+              className="glass group hover:glow transition-all duration-300 overflow-hidden scroll-reveal bg-card/80 backdrop-blur-sm border-border/50"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="aspect-video overflow-hidden">
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-card-foreground">{project.title}</h3>
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
@@ -64,7 +64,7 @@ const ProjectsSection = () => {
                   {project.stack.map((tech) => (
                     <span 
                       key={tech}
-                      className="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full font-mono"
+                      className="tech-badge px-3 py-1 text-xs rounded-full font-mono font-medium shadow-sm border border-current/20"
                     >
                       {tech}
                     </span>
@@ -75,7 +75,7 @@ const ProjectsSection = () => {
                   <Button 
                     size="sm" 
                     variant="outline"
-                    className="magnetic-hover"
+                    className="magnetic-hover border-primary/20 hover:border-primary"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -85,11 +85,11 @@ const ProjectsSection = () => {
                   </Button>
                   <Button 
                     size="sm"
-                    className="magnetic-hover"
+                    className="magnetic-hover bg-primary hover:bg-primary/90"
                     asChild
                   >
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
-                      <Mail size={16} />
+                      <ExternalLink size={16} />
                       Live Demo
                     </a>
                   </Button>

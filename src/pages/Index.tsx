@@ -11,6 +11,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
 import ScrollToTop from '../components/ScrollToTop';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 6000); // Increased to 6 seconds for more attractive loading
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,8 +29,9 @@ const Index = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background transition-colors duration-300">
       <ParticleBackground />
+      <ThemeToggle />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
