@@ -49,7 +49,8 @@ const AboutSection = () => {
           About Me
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Terminal Section */}
           <Card className="glass p-8 scroll-reveal">
             <div className="terminal rounded-lg p-6">
               <div className="flex items-center mb-4">
@@ -75,29 +76,42 @@ const AboutSection = () => {
                   • Cloud Infrastructure<br/>
                   • Open Source Contributions
                 </div>
+                <div><span className="text-gray-400">$</span> cat stats.txt</div>
+                <div className="text-yellow-400">
+                  APIs Built: {counters.apis}+ | Users Served: {counters.users.toLocaleString()}+ | Uptime: {counters.uptime.toFixed(1)}%
+                </div>
               </div>
             </div>
           </Card>
 
-          <div className="space-y-8">
-            <Card className="glass p-6 scroll-reveal magnetic-hover">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">{counters.apis}+</div>
-                <div className="text-muted-foreground">APIs Built</div>
+          {/* Developer Image Section */}
+          <div className="scroll-reveal">
+            <Card className="glass p-8 magnetic-hover overflow-hidden">
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 p-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=500&fit=crop&crop=face"
+                    alt="Developer Profile"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
+                
+                {/* Floating particles around image */}
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full animate-pulse"></div>
+                <div className="absolute top-1/4 -left-2 w-3 h-3 bg-primary rounded-full animate-bounce"></div>
+                <div className="absolute bottom-1/4 -right-1 w-2 h-2 bg-secondary rounded-full animate-ping"></div>
+                <div className="absolute -bottom-1 left-1/4 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
               </div>
-            </Card>
-            
-            <Card className="glass p-6 scroll-reveal magnetic-hover">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">{counters.users.toLocaleString()}+</div>
-                <div className="text-muted-foreground">Users Served</div>
-              </div>
-            </Card>
-            
-            <Card className="glass p-6 scroll-reveal magnetic-hover">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent">{counters.uptime.toFixed(1)}%</div>
-                <div className="text-muted-foreground">Uptime</div>
+              
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-bold gradient-text mb-2">Alex Johnson</h3>
+                <p className="text-muted-foreground font-mono text-sm">
+                  Node.js Backend Developer
+                </p>
+                <div className="flex justify-center space-x-1 mt-3">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="text-xs text-muted-foreground">Available for freelance</span>
+                </div>
               </div>
             </Card>
           </div>
